@@ -27,7 +27,7 @@ function getShortPath($relative_path)
     return $local_path;
 }
 
-function getPath($relative_path, $base_dir = '/home/www/somesite.com/htdocs')
+function getPath($relative_path, $base_dir = '/')
 {
     $get_short_path = getShortPath($relative_path);
     $get_path = $base_dir . $get_short_path;
@@ -37,6 +37,6 @@ function getPath($relative_path, $base_dir = '/home/www/somesite.com/htdocs')
 $relative_path = './aa/.././bb/ccc/../../aa/some_path/file.txt';
 $base_dir = '/home/www/somesite.com/htdocs';
 
-$result = getPath($relative_path);
+$result = getPath($relative_path, $base_dir);
 
 var_dump($result);
